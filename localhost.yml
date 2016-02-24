@@ -1,0 +1,17 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  tasks:
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - caskroom/versions
+      - homebrew/dupes
+      - homebrew/python
+      - homebrew/science
+      - homebrew/versions
+      - neovim/neovim
+      - sanemat/font
+      - supermomonga/splhack
+
