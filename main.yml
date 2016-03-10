@@ -1,0 +1,47 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - caskroom/versions
+      - homebrew/dupes
+      - homebrew/python
+      - homebrew/science
+      - homebrew/versions
+      - neovim/neovim
+      - sanemat/font
+      - supermomonga/splhack
+
+    homebrew_packages:
+      - { name: gcc }
+      - { name: app-engine-python }
+      - { name: ghostscript }
+      - { name: git }
+      - { name: gnuplot }
+      - { name: go }
+      - { name: grep }
+      - { name: heroku-toolbelt }
+      - { name: imagemagick }
+      - { name: less }
+      - { name: lua }
+      - { name: mecab }
+      - { name: mecab-ipadic }
+      - { name: mysql }
+      - { name: nkf }
+      - { name: nodebrew }
+      - { name: pandoc }
+      - { name: peco }
+      - { name: pyenv }
+      - { name: neovim, install_options: HEAD }
+      - { name: rbenv }
+      - { name: readline }
+      - { name: ricty }
+      - { name: ruby-build }
+      - { name: source-highlight }
+      - { name: tidy-html5 }
+      - { name: tig }
+      - { name: tree }
+      - { name: vim, install_options: 
+
