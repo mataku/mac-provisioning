@@ -1,0 +1,111 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  vars:
+    homebrew_taps: 
+      - caskroom/cask
+      - caskroom/versions
+      - homebrew/dupes 
+      - homebrew/python 
+      - homebrew/science 
+      - homebrew/versions 
+      - neovim/neovim
+      - sanemat/font 
+      - supermomonga/splhack 
+    
+    homebrew_packages:
+      - { name: gcc }
+      - { name: app-engine-python }
+      - { name: fontforge }
+      - { name: freetype }
+      - { name: fontconfig }
+      - { name: ghostscript }
+      - { name: git, install_options: with-brewed-curl, with-brewed-openssl}
+      #- { name: gnuplot }
+      - { name: go }
+      - { name: grep }
+      - { name: heroku-toolbelt }
+      - { name: imagemagick }
+      - { name: less }
+      - { name: lua }
+      - { name: mecab }
+      - { name: mecab-ipadic }
+      - { name: mysql }
+      - { name: nkf }
+      - { name: nodebrew }
+      - { name: pandoc }
+      - { name: peco }
+      - { name: python3 }
+      - { name: pypy3 }
+      - { name: pyenv }
+      - { name: neovim, install_options: HEAD }
+      - { name: rbenv }
+      - { name: readline }
+      - { name: ricty }
+      - { name: ruby-build }
+      - { name: ruby }
+      - { name: source-highlight }
+      - { name: tidy-html5 }
+      - { name: tig }
+      - { name: tree }
+      - { name: vim, install_options: with-lua, with-python3, override-system-vi}
+      - { name: zsh, install_options: without-etcdir }
+      - { name: zsh-completions }
+
+
+      
+    homebrew_cask_packages:
+      - { name: android-studio }
+      - { name: atom }
+      - { name: basictex }
+      #- { name: evernote }
+      - { name: virtualbox }
+      - { name: vagrant }
+      - { name: dockertoolbox }
+      - { name: github-desktop }
+      - { name: google-chrome }
+      - { name: google-japanese-ime }
+      - { name: iterm2 }
+      - { name: java }
+      - { name: java7 }
+      - { name: karabiner }
+      - { name: otto }
+      - { name: skim }
+      - { name: slack }
+      - { name: visual-studio-code }
+      - { name: xquartz }
+
+
+  tasks:
+    # update homebrew
+    - name: update homebrew
+      homebrew: update_homebrew=yes
+    
+    # tap
+    - name: brew tap
+      homebrew_tap: "tap={{ item }} state=present"
+      with_items: "{{ homebrew_taps }}"
+    
+    # brew install 
+    - name: install homebrew package
+      homebrew:
+         "name={{ item.name }} state={{ item.state | default('latest') }} 
+          install_options={{ item.install_option | default('') }}"
+      with_items: "{{ homebrew_packages }}"
+    
+    # brew cask install
+    - name: install cask package
+      homebrew_cask: "name={{ item.name }} state={{ item.state | default('installed') }}"
+      with_items: "{{ homebrew_cask_packages }}"
+
+    # Ricty
+    - name: copy font file
+      shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+      notify: run fc-cache
+      args:
+        creates: ~/Library/Fonts/Ricty-Bold.ttf
+
+  handlers:
+    - name: run fc-cache
+      shell: fc-cache -vf

@@ -1,0 +1,8 @@
+gensim
+jupyter
+scikit-learn
+networkx
+numpy
+scipy
+matplotlib
+notebook
