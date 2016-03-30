@@ -1,0 +1,52 @@
+- name: git clone my dotfiles
+  #file: path=~/dotfiles state=directory mode=0755
+  git:
+    repo=https://github.com/rhythnn/dotfiles.git
+    dest=~/
+    version=master
+
+- name: git clone zplug
+  git:
+    repo=https://github.com/b4b4r07/zplug
+    dest=~/.zplug
+    version=master
+
+- name: oh-my-zsh
+	shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+ 	args:
+		creates: ~/.oh-my-zsh/
+
+- name: create dotfile symlinks
+  file:
+    src: ~/dotfiles/{{ item }}
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+
+  with_items:
+    - .zshrc
+    - .vimrc
+
+
+- name: create symlinks of vim
+  file:
+    src: ~/dotfiles/vim/{{ item }}
+    dest: ~/.vim/
+    state: link
+    force: yes
+
+  with_items:
+    - after
+    - autoload
+    #- bundle
+    - colors
+    - dein
+    - indent
+    - rc
+
+- name: create symlinks of neovim
+  file:
+    src: ~/dotfiles/nvim
+    dest: ~/.config/
+    state: link
+    force: yes

@@ -3,17 +3,17 @@
   gather_facts: no
   become: no
   vars:
-    homebrew_taps: 
+    homebrew_taps:
       - caskroom/cask
       - caskroom/versions
-      - homebrew/dupes 
-      - homebrew/python 
-      - homebrew/science 
-      - homebrew/versions 
+      - homebrew/dupes
+      - homebrew/python
+      - homebrew/science
+      - homebrew/versions
       - neovim/neovim
-      - sanemat/font 
-      - supermomonga/splhack 
-    
+      - sanemat/font
+      - supermomonga/splhack
+
     homebrew_packages:
       - { name: gcc }
       - { name: app-engine-python }
@@ -42,7 +42,7 @@
       - { name: neovim, install_options: HEAD }
       - { name: rbenv }
       - { name: readline }
-      - { name: ricty, install_options: powerline, vim-powerline }
+      - { name: ricty }
       - { name: ruby-build }
       - { name: ruby }
       - { name: source-highlight }
@@ -53,13 +53,11 @@
       - { name: zsh, install_options: without-etcdir }
       - { name: zsh-completions }
 
-
-      
     homebrew_cask_packages:
       - { name: android-studio }
       - { name: atom }
       - { name: basictex }
-      #- { name: evernote }
+      - { name: evernote }
       - { name: virtualbox }
       - { name: vagrant }
       - { name: dockertoolbox }
@@ -76,36 +74,45 @@
       - { name: visual-studio-code }
       - { name: xquartz }
 
+    tasks:
+            # update homebrew
+      - name: brew update
+        homebrew: update_homebrew=yes
 
-  tasks:
-    # update homebrew
-    - name: update homebrew
-      homebrew: update_homebrew=yes
-    
-    # tap
-    - name: brew tap
-      homebrew_tap: "tap={{ item }} state=present"
-      with_items: "{{ homebrew_taps }}"
-    
-    # brew install 
-    - name: install homebrew package
-      homebrew:
-         "name={{ item.name }} state={{ item.state | default('latest') }} 
-          install_options={{ item.install_option | default('') }}"
-      with_items: "{{ homebrew_packages }}"
-    
-    # brew cask install
-    - name: install cask package
-      homebrew_cask: "name={{ item.name }} state={{ item.state | default('installed') }}"
-      with_items: "{{ homebrew_cask_packages }}"
 
-    # Ricty
-    - name: copy font file
-      shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-      notify: run fc-cache
-      args:
-        creates: ~/Library/Fonts/Ricty-Bold.ttf
-    
-  handlers:
-    - name: run fc-cache
-      shell: fc-cache -vf
+      # brew tap
+      - name: brew tap
+        homebrew_tap: "tap={{ item }} state=present"
+        with_items: "{{ homebrew_taps }}"
+
+      # install package
+      - name: install homebrew package
+        homebrew: 
+          "name={{ item.name }} state={{ item.state | default('latest') }} 
+          install_options={{ item.install_option | default('') }} "
+        with_items: "{{ homebrew_packages }}"
+        register: brew_result
+
+      # cask
+      - name: install cask package
+        homebrew_cask: name={{ item.name }} state={{ item.state | default('installed') }}
+        with_items: homebrew_cask_packages
+        register: cask_result
+
+      # Ricty
+      - name: copy font file
+        shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+        notify: run fc-cache
+
+        args:
+          creates: ~/Library/Fonts/Ricty-Bold.ttf
+      # gnuplot (with-x11)
+      #- name: install gnuplot with x11
+      #  homebrew: >
+      #    name=gnuplot
+      #    state=latest
+      #    install_options=with-x11
+
+    handlers:
+      - name: run fc-cache
+        shell: fc-cache -vf
