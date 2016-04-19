@@ -3,31 +3,31 @@
 - name: git clone my dotfiles
   git:
     repo=https://github.com/rhythnn/dotfiles.git
-    dest=~/Workspace1/dotfiles
+    dest=~/dotfiles
     version=master
 
 - name: git clone zplug
   git:
     repo=https://github.com/b4b4r07/zplug
-    dest=~/Workspace1/.zplug
+    dest=~/.zplug
     version=master
 
 - name: install oh-my-zsh
   shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   args:
-    creates: ~/Workspace1
+    creates: ~/
 
 - name: mkdir vim dir
-  file: path=~/Workspace1/.vim state=directory mode=0755
+  file: path=~/.vim state=directory mode=0755
 
 - name: mkdir nvim dir
-  file: path=~/Workspace1/.config state=directory mode=0755
+  file: path=~/.config state=directory mode=0755
 
 
 - name: create dotfile symlinks
   file:
-    src: ~/Workspace1/dotfiles/{{ item }}
-    dest: ~/Workspace1/{{ item }}
+    src: ~/dotfiles/{{ item }}
+    dest: ~/{{ item }}
     state: link
     force: yes
 
@@ -38,8 +38,8 @@
 
 - name: create symlinks of vim
   file:
-    src: ~/Workspace1/dotfiles/vim/{{ item }}
-    dest: ~/Workspace1/.vim/{{ item }}
+    src: ~/dotfiles/vim/{{ item }}
+    dest: ~/.vim/{{ item }}
     state: link
     force: yes
 
@@ -54,7 +54,7 @@
 
 - name: create symlinks of neovim
   file:
-    src: ~/Workspace1/dotfiles/nvim
-    dest: ~/Workspace1/.config
+    src: ~/dotfiles/nvim
+    dest: ~/.config
     state: link
     force: yes
