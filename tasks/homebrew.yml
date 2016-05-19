@@ -5,16 +5,16 @@
 
 - name: Tap Homebrew repositories
   homebrew_tap: tap={{ item }}
-  with_items: 
+  with_items:
     - caskroom/cask
     - caskroom/versions
-    - homebrew/dupes 
-    - homebrew/python 
-    - homebrew/science 
-    - homebrew/versions 
+    - homebrew/dupes
+    - homebrew/python
+    - homebrew/science
+    - homebrew/versions
     - neovim/neovim
-    - sanemat/font 
-    - supermomonga/splhack 
+    - sanemat/font
+    - supermomonga/splhack
 
 - name: Install Homebrew packages
   homebrew: name={{ item.name }} install_options={{ item.options|default() }}
@@ -64,6 +64,7 @@
     - { name: android-studio }
     - { name: atom }
     - { name: basictex }
+    - { name: caffeine}
     #- { name: evernote }
     - { name: virtualbox }
     - { name: vagrant }
@@ -76,9 +77,9 @@
     - { name: java7 }
     - { name: karabiner }
     - { name: otto }
+    - { name: onyx}
+    - { name: prott}
     - { name: skim }
     - { name: slack }
     - { name: visual-studio-code }
     - { name: xquartz }
-
-
