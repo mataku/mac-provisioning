@@ -4,4 +4,5 @@ os:
 before_install:
   - brew update
   - brew install ansible
+script:
   - ansible-playbook -vv main.yml -i hosts
