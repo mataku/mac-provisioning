@@ -1,6 +1,13 @@
 ---
 
 #Ricty
+- name: install Ricty
+  homebrew: name = {{ item.name }} install_options = {{ item.options | default() }}
+  with_items:
+    - { name: fontforge }
+    - { name: ricty, options: [powerline,vim-powerline] }
+
+
 - name: copy font file
   command: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
   
@@ -10,4 +17,4 @@
     
   
 - name: run fc-cache
-  command: fc-cache -vf
+  shell: fc-cache -vf
