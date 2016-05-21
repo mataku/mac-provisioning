@@ -63,12 +63,12 @@
   with_items:
     - { name: android-studio }
     - { name: atom }
-    - { name: basictex }
+    # - { name: basictex }
     - { name: caffeine}
     #- { name: evernote }
-    - { name: virtualbox }
-    - { name: vagrant }
-    - { name: dockertoolbox }
+    #- { name: virtualbox }
+    #- { name: vagrant }
+    #- { name: dockertoolbox }
     - { name: github-desktop }
     - { name: google-chrome }
     - { name: google-japanese-ime }
@@ -83,3 +83,13 @@
     - { name: slack }
     - { name: visual-studio-code }
     - { name: xquartz }
+
+- name: sudo notification
+  shell: osascript -e 'display notification "enter your password!" with title "Application requires"'
+
+- name: install homebrew cask packages (with sudo)
+  homebrew_cask: name={{ item.name }}
+  with_items:
+    - { name: virtualbox }
+    - { name: vagrant }
+    - { name: dockertoolbox }

@@ -4,5 +4,5 @@
   become: no
   tasks:
     - include: tasks/homebrew.yml
-    - include: tasks/dotfiles.yml
-    - include: tasks/font.yml
+      #- include: tasks/dotfiles.yml
+      #- include: tasks/font.yml
