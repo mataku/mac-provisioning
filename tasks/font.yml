@@ -8,8 +8,8 @@
     - { name: ricty, options: [powerline,vim-powerline] }
 
 
-- name: make directory of fonts
-  shell: mkdir ~/Library/Fonts
+#- name: make directory of fonts
+#shell: mkdir ~/Library/Fonts
 
 - name: copy font file
   shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
