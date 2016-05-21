@@ -5,7 +5,7 @@
   homebrew: name = {{ item.name }} install_options = {{ item.options | default() }}
   with_items:
     - { name: fontforge }
-    - { name: ricty, options: [powerline,vim-powerline] }
+    - { name: sanemat/font/ricty, options: [powerline,vim-powerline] }
 
 
 #- name: make directory of fonts
