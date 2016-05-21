@@ -1,8 +1,11 @@
 language: objective-c
 os:
-  - osx
+- osx
 before_install:
-  - brew update
-  - brew install ansible
+- brew update
+- brew install ansible
 script:
-  - ansible-playbook -vv main.yml -i hosts
+- ansible-playbook -vv main.yml -i hosts
+notifications:
+  slack:
+    secure: p4eY8Crk0aMmKtUzW5y+wS+HdPI6pP208lSJI3S4P8v4OxmN5RuP1w5DmvBjxB0w2Ve2fckjeVJCT3/IseQqqs+Ih+XygkXxZxIKRDpf9TOO3b2IZNjF0+wyLN3XkFUw8Q7FFgJ0PiWhiyb+lZVDgrh9QtVJUdAHplI5A1QxDAQL5bs1zdUFSZ95oBI/SSxGNKaEIwL8QCbVAdLLzxsAkV8Sm+D7+7ryypwJ3D4fBMOwd6vtB2gbPG5yhYjzUbaIPaCqrVcosPnJd5rUbmPI8kTqxCejwVUH4VNlF9oY4JHv9OHItFSHkaKAzzROhbpftCTXOCu3NxpvkZhnewZ0VEiZjkO/anVFNQn+Ogr4/bdk+BI5Gjo7JdldU/h3w6D77kZ0KXeTOGydUqghv1sGqPoTA7SLox/qoxpIApInh7RZwMQ8LlGFuhhFGL1QvgaiDnSUUsvpFpNAjVE1ANoTfgN3TQTgihbhxeUCAhnyIk6MV9yPGFeWkxx1iq8RX5vjydS3EgpZ8tC77PbVBsfwgnMHhqfC3DSXWy9gSCXvCNwbiYq4enr7tPpWpf7BTnp31i2jxW2eAuFuzEWZk6rCWXkFpQbGeKgh6kYYqaZWe6rU8gvZJvu5zdZ5sMM+dbbojSLZ6zb/ZTsgmM0uHl/Uq8dLN01vAmciYN2oNirBa38=
