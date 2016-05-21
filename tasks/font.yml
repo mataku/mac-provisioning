@@ -9,7 +9,7 @@
 
 
 - name: copy font file
-  command: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+  shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
   
   notify: run fc-cache
   args:
