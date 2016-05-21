@@ -1,0 +1,7 @@
+language: objective-c
+os:
+  - osx
+before_install:
+  - brew update
+  - brew install ansible
+  - ansible-playbook -vv main.yml -i hosts
