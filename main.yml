@@ -2,7 +2,7 @@
   connection: local
   gather_facts: no
   become: no
-  tasks:
-    - include: tasks/homebrew.yml
-    - include: tasks/dotfiles.yml
-    - include: tasks/font.yml
+  roles:
+    - homebrew
+    - dotfiles
+    - font
