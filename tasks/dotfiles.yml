@@ -54,7 +54,7 @@
 
 - name: create symlinks of neovim
   file:
-    src: ~/dotfiles/nvim
+    src: ~/dotfiles/nvim/
     dest: ~/.config/nvim
     state: link
     force: yes
