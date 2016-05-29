@@ -1,0 +1,18 @@
+---
+
+dotfile_items:
+	- .zshrc
+	- .vimrc
+
+vim_items:
+	- after
+	- autoload
+	- colors
+	- dein
+	- indent
+	- rc
+
+#nvim_items:
+
+
+
