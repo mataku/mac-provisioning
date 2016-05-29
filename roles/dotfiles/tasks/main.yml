@@ -31,7 +31,7 @@
     state: link
     force: yes
 
-  with_items: dotfile_items
+  with_items: "{{ dotfile_items }}"
 
 
 - name: create symlinks of vim
@@ -41,7 +41,7 @@
     state: link
     force: yes
 
-  with_items: vim_items
+  with_items: "{{ vim_items }}"
 
 - name: create symlinks of neovim
   file:
