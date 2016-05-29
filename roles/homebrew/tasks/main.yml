@@ -5,18 +5,18 @@
 
 - name: Tap Homebrew repositories
   homebrew_tap: tap={{ item }}
-  with_items: homebrew_repositories
+  with_items: "{{ homebrew_repositories }}"
 
 - name: Install Homebrew packages
   homebrew: name={{ item.name }} install_options={{ item.options | default() }}
-  with_items: homebrew_packages
+  with_items: "{{ homebrew_packages }}"
 
 - name: noti (Start install cask packages)
   shell: osascript -e 'display notification "Start installing cask packages!" with title "Finished Homebrew packages!"'
 
 - name: Install homebrew cask packages
   homebrew_cask: name={{ item.name }}
-  with_items: homebrew_cask_packages
+  with_items: "{{ homebrew_cask_packages }}"
 
 - name: sudo notification
   shell: osascript -e 'display notification "enter password...." with title "Application requires"'
