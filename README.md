@@ -2,5 +2,5 @@
 
 ## Installation
 
-    git clone git://github.com/rhythnn/mac-ansible.git  
-    sh mac-ansible/init.sh
+    $ git clone git://github.com/rhythnn/mac-ansible.git  
+    $ sh mac-ansible/init.sh
