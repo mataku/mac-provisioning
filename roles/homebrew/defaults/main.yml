@@ -56,23 +56,23 @@ homebrew_packages:
   - { name: zsh-completions }
 
 homebrew_cask_packages:
-  - { name: android-studio }
-  - { name: atom }
-  # - { name: basictex }
+  #- { name: android-studio }
+  #- { name: atom }
+  #- { name: basictex }
   - { name: caffeine }
-  - { name: docker }
-  - { name: github-desktop }
-  - { name: google-chrome }
-  - { name: google-japanese-ime }
-  - { name: iterm2 }
+  #- { name: docker }
+  #- { name: github-desktop }
+  #- { name: google-chrome }
+  #- { name: google-japanese-ime }
+  #- { name: iterm2 }
   - { name: java }
-  - { name: karabiner }
-  - { name: otto }
-  - { name: onyx }
-  - { name: prott}
+  #- { name: karabiner }
+  #- { name: otto }
+  #- { name: onyx }
+  #- { name: prott}
   - { name: skim }
   - { name: shiftit }
-  - { name: slack }
-  - { name: visual-studio-code }
-  - { name: vivaldi }
+  #- { name: slack }
+  #- { name: visual-studio-code }
+  #- { name: vivaldi }
   - { name: xquartz }
