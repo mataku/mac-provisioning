@@ -14,6 +14,8 @@ homebrew_repositories:
 homebrew_packages:
   - { name: gcc }
   - { name: app-engine-python }
+  - { name: curl }
+  - { name: emacs }
   - { name: fontforge }
   - { name: freetype }
   - { name: fontconfig }
@@ -24,6 +26,7 @@ homebrew_packages:
   - { name: grep }
   - { name: heroku-toolbelt }
   - { name: imagemagick }
+  - { name: jq }
   - { name: less }
   - { name: lua }
   - { name: mecab }
@@ -38,6 +41,7 @@ homebrew_packages:
   - { name: pyenv }
   - { name: neovim, options: HEAD }
   - { name: rbenv }
+  - { name: rust }
   - { name: readline }
   - { name: ricty, options: [powerline,vim-powerline] }
   - { name: ruby-build }
@@ -46,6 +50,7 @@ homebrew_packages:
   - { name: tidy-html5 }
   - { name: tig }
   - { name: tree }
+  - { name: tmux }
   - { name: vim, options: [with-lua,with-python3,override-system-vi]}
   - { name: zsh, options: without-etcdir }
   - { name: zsh-completions }
@@ -54,7 +59,8 @@ homebrew_cask_packages:
   - { name: android-studio }
   - { name: atom }
   # - { name: basictex }
-  - { name: caffeine}
+  - { name: caffeine }
+  - { name: docker }
   - { name: github-desktop }
   - { name: google-chrome }
   - { name: google-japanese-ime }
@@ -62,9 +68,11 @@ homebrew_cask_packages:
   - { name: java }
   - { name: karabiner }
   - { name: otto }
-  - { name: onyx}
+  - { name: onyx }
   - { name: prott}
   - { name: skim }
+  - { name: shiftit }
   - { name: slack }
   - { name: visual-studio-code }
+  - { name: vivaldi }
   - { name: xquartz }
