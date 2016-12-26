@@ -3,12 +3,12 @@
 dotfile_items:
   - .zshrc
   - .vimrc
+  - .tmux.conf
 
 vim_items:
   - after
   - autoload
   - colors
-  - dein
   - indent
   - rc
 
