@@ -1,8 +1,11 @@
-language: objective-c
 os:
-- osx
+  - osx
+# OSX 10.12
+osx_image:
+  - xcode8.2
 before_install:
 - brew update
+- brew cask install xquartz
 - brew install ansible
 script:
 - ansible-playbook -vv main.yml -i hosts
