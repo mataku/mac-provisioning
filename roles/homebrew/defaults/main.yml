@@ -9,7 +9,6 @@ homebrew_repositories:
   - homebrew/versions
   - neovim/neovim
   - sanemat/font
-  - supermomonga/splhack
 
 homebrew_packages:
   - { name: gcc }
