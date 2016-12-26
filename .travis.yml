@@ -1,8 +1,4 @@
-os:
-  - osx
-# OSX 10.12
-osx_image:
-  - xcode8.2
+os: osx
 before_install:
 - brew update
 - brew cask install xquartz
