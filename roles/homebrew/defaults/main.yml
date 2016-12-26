@@ -40,7 +40,6 @@ homebrew_packages:
   - { name: rbenv }
   - { name: rust }
   - { name: readline }
-  - { name: ricty, options: [powerline,vim-powerline] }
   - { name: ruby-build }
   - { name: ruby }
   - { name: source-highlight }
