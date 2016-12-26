@@ -26,4 +26,3 @@
   with_items:
     - { name: virtualbox }
     - { name: vagrant }
-#    - { name: dockertoolbox }
