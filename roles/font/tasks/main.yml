@@ -7,7 +7,7 @@
     version=master
     
 - name: copy font files
-  shell: cp -f ~/github.com/Ricty/*.ttf ~/Library/Fonts/
+  shell: cp -f ~/github.com/patchedFonts/*.ttf ~/Library/Fonts/
   
 - name: run fc-cache
   shell: fc-cache -vf

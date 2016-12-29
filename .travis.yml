@@ -1,10 +1,9 @@
 os: osx
 before_install:
-- brew update
-- brew cask install xquartz
-- brew install ansible
+  - brew update
+  - brew install ansible
 script:
-- ansible-playbook -vv main.yml -i hosts
+  - ansible-playbook -vv main.yml -i hosts
 dd:
   secure: hANQ1hyxs5gDdFuuE0pc0PhQ1MXLYieoHwh6zcjzDXPTUIIqfHzyjymUXboWfLOTGLNcJ2KAH8yv7+wHSSV4T/WVvzic4HWT5uFul1LLRpaAsslsyrvD6YVhGnC34hTDV+zPNZ0LS9PRipjMHmdK+DpF4ZsOF7vv/vQuCo2pMo1g63SauXcmYGsvC7t0zWt6759xwobF6BFR0ZCWzRCJqVy2FiXk5WxEn5hI8w9YB9NJxFV694zLmITx/DuzCN4D1P16wvsIaFlZHjBaIsTF0IdHR2jnaK+po6BYY2xMRhQGYTVHG7D95rERjCPaaHk9KHDlpoA9EL6OfdHHKzHZ90PRJnXToauNoLmElMBPauGQleGYE8SuVI7hZu0LfNsZe3h7Qsh7iwgWT/ScYXDTuuUQcHwmLBfSN++xiLbw4ki7GpO/rU6jpbESFISllzd+8gqys41ZG+icUqjFbgDtuZovLYqMOjLqA8sJQwbcCEP37sx5+7y3RWNvAaO2xpFNhR8oCW4CWQnyWwtry4Ow6HctdMx3kBXRjDMKcx/FTZns1pnkxehixaH7zbeWLUZDJ2ixgRxSTlJbS5xzE4WRmaun6B0BgbYz9RGIdwJSq5yCvjIRoAu3J2bvV3OC9jVhNcKf3Nl/4jRlT7PKnR1i1TloZa4xyeLu7mBZYS5Ds7c=
 notifications:
