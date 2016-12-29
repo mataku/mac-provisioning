@@ -1,23 +1,13 @@
 ---
 
-#Ricty
-- name: install Ricty
-  homebrew: name = {{ item.name }} install_options = {{ item.options | default() }}
-  with_items:
-    - { name: fontforge }
-    - { name: ricty, options: [powerline,vim-powerline] }
-
-
-#- name: make directory of fonts
-#shell: mkdir ~/Library/Fonts
-
-- name: copy font file
-  shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
-  
-  notify: run fc-cache
-  args:
-    creates: ~/Library/Fonts/Ricty-Bold.ttf
+- name: git clone
+  git:
+    repo=https://github.com/rhythnn/patchedFonts
+    dest=~/github.com/patchedFonts
+    version=master
     
+- name: copy font files
+  shell: cp -f ~/github.com/Ricty/*.ttf ~/Library/Fonts/
   
 - name: run fc-cache
   shell: fc-cache -vf
