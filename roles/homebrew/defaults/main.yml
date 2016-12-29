@@ -18,8 +18,9 @@ homebrew_packages:
   - { name: freetype }
   - { name: fontconfig }
   - { name: ghostscript }
-  - { name: git, options: with-brewed-curl with-brewed-openssl}
+  - { name: git, options: [with-brewed-curl, with-brewed-openssl]}
   - { name: go }
+  - { name: gnu-sed }
   - { name: grep }
   - { name: heroku-toolbelt }
   - { name: imagemagick }
@@ -42,6 +43,7 @@ homebrew_packages:
   - { name: readline }
   - { name: ricty, options: [powerline,vim-powerline] }
   - { name: ruby-build }
+  - { name: rbenv }
   - { name: ruby }
   - { name: source-highlight }
   - { name: tidy-html5 }
