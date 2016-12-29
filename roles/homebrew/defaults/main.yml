@@ -11,9 +11,7 @@ homebrew_repositories:
 
 homebrew_packages:
   - { name: gcc }
-  - { name: app-engine-python }
   - { name: curl }
-  - { name: emacs }
   - { name: fontforge }
   - { name: freetype }
   - { name: fontconfig }
