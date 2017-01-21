@@ -17,12 +17,3 @@
 - name: Install packages via Homebrew-cask
   homebrew_cask: name={{ item.name }}
   with_items: "{{ homebrew_cask_packages }}"
-
-- name: sudo notification
-  shell: osascript -e 'display notification "enter password...." with title "Application requires"'
-
-- name: install packages via Homebrew-cask(with sudo)
-  homebrew_cask: name={{ item.name }}
-  with_items:
-    - { name: virtualbox }
-    - { name: vagrant }
