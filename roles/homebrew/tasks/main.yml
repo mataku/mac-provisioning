@@ -1,29 +1,19 @@
 ---
 
-- name: Update homebrew
-  homebrew: update_homebrew=yes upgrade_all=yes
+#- name: Update homebrew
+#  homebrew: update_homebrew=yes upgrade_all=yes
 
 - name: Tap Homebrew repositories
   homebrew_tap: tap={{ item }}
   with_items: "{{ homebrew_repositories }}"
 
-- name: Install Homebrew packages
+- name: Install packages via Homebrew
   homebrew: name={{ item.name }} install_options={{ item.options | default() }}
   with_items: "{{ homebrew_packages }}"
 
 - name: noti (Start install cask packages)
   shell: osascript -e 'display notification "Start installing cask packages!" with title "Finished Homebrew packages!"'
 
-- name: Install homebrew cask packages
+- name: Install packages via Homebrew-cask
   homebrew_cask: name={{ item.name }}
   with_items: "{{ homebrew_cask_packages }}"
-
-- name: sudo notification
-  shell: osascript -e 'display notification "enter password...." with title "Application requires"'
-
-- name: install homebrew cask packages (with sudo)
-  homebrew_cask: name={{ item.name }}
-  with_items:
-    - { name: virtualbox }
-    - { name: vagrant }
-#    - { name: dockertoolbox }

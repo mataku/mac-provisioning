@@ -23,30 +23,5 @@
 - name: mkdir nvim dir
   file: path=~/.config/nvim state=directory mode=0755
 
-
-- name: create dotfile symlinks
-  file:
-    src: ~/dotfiles/{{ item }}
-    dest: ~/{{ item }}
-    state: link
-    force: yes
-
-  with_items: "{{ dotfile_items }}"
-
-
-- name: create symlinks of vim
-  file:
-    src: ~/dotfiles/vim/{{ item }}
-    dest: ~/.vim/{{ item }}
-    state: link
-    force: yes
-
-  with_items: "{{ vim_items }}"
-
-- name: create symlinks of neovim
-  file:
-    src: ~/dotfiles/nvim/
-    dest: ~/.config/nvim
-    state: link
-    force: yes
-
+- name: create symlinks
+  shell: sh ~/dotfiles/install.sh
