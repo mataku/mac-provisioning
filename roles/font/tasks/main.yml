@@ -1,13 +1,7 @@
 ---
 
-- name: git clone
-  git:
-    repo=https://github.com/rhythnn/patchedFonts
-    dest=~/github.com/patchedFonts
-    version=master
-    
 - name: copy font files
-  shell: cp -f ~/github.com/patchedFonts/*.ttf ~/Library/Fonts/
+  shell: cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
   
 - name: run fc-cache
   shell: fc-cache -vf
