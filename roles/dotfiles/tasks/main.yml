@@ -17,6 +17,9 @@
   args:
     creates: ~/
 
+- name: install powerline
+  shell: pip3 install powerline-status
+
 - name: mkdir vim dir
   file: path=~/.vim state=directory mode=0755
 
