@@ -24,10 +24,15 @@
 - name: create symlinks
   shell: sh ~/dotfiles/install.sh
 
+- name: install emacs packages via cask
+  shell: cask install
+  args:
+    chdir: ~/.emacs.d/
+
 - name: install fisherman
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 - name: install fish plugins via fisherman
-  shell: fisher
+  shell: fish fisher
   args:
     chdir: ~/.config/fish/
