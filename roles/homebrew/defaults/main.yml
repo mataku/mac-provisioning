@@ -11,6 +11,7 @@ homebrew_repositories:
 
 homebrew_packages:
   - { name: gcc }
+  - { name: cask }
   - { name: curl }
   - { name: fish }
   - { name: fontforge }
