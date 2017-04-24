@@ -33,6 +33,6 @@
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
 - name: install fish plugins via fisherman
-  shell: fish fisher
+  shell: fish ~/.config/fish/functions/fisher.fish
   args:
     chdir: ~/.config/fish/
