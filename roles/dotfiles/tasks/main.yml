@@ -12,11 +12,6 @@
     dest=~/.zplug
     version=master
 
-- name: install oh-my-zsh
-  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-  args:
-    creates: ~/
-
 - name: install powerline
   shell: pip3 install powerline-status
 
@@ -28,3 +23,16 @@
 
 - name: create symlinks
   shell: sh ~/dotfiles/install.sh
+
+- name: install emacs packages via cask
+  shell: cask install
+  args:
+    chdir: ~/.emacs.d/
+
+- name: install fisherman
+  shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+
+- name: install fish plugins via fisherman
+  shell: fish ~/.config/fish/functions/fisher.fish
+  args:
+    chdir: ~/.config/fish/
