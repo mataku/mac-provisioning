@@ -31,7 +31,6 @@ homebrew_packages:
   - { name: lua }
   - { name: mecab }
   - { name: mecab-ipadic }
-  - { name: mysql }
   - { name: nkf }
   - { name: nodebrew }
   - { name: pandoc }
