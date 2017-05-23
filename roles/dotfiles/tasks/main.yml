@@ -6,12 +6,6 @@
     dest=~/dotfiles
     version=master
 
-- name: git clone zplug
-  git:
-    repo=https://github.com/b4b4r07/zplug
-    dest=~/.zplug
-    version=master
-
 - name: install powerline
   shell: pip3 install powerline-status
 
