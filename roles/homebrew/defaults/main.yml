@@ -6,13 +6,14 @@ homebrew_repositories:
   - homebrew/python
   - homebrew/science
   - homebrew/versions
-  - neovim/neovim
   - sanemat/font
 
 homebrew_packages:
   - { name: gcc }
   - { name: cask }
+  - { name: carthage }
   - { name: curl }
+  - { name: emacs }
   - { name: fish }
   - { name: fontforge }
   - { name: freetype }
@@ -23,13 +24,13 @@ homebrew_packages:
   - { name: gnu-sed }
   - { name: grep }
   - { name: heroku-toolbelt }
-  - { name: imagemagick }
+  - { name: hugo }
   - { name: jq }
+  - { name: kotlin }
   - { name: less }
   - { name: lua }
   - { name: mecab }
   - { name: mecab-ipadic }
-  - { name: mysql }
   - { name: nkf }
   - { name: nodebrew }
   - { name: pandoc }
@@ -37,8 +38,8 @@ homebrew_packages:
   - { name: python3 }
   - { name: pypy3 }
   - { name: pyenv }
-  - { name: neovim, options: HEAD }
   - { name: rbenv }
+  - { name: reattach-to-user-namespace }
   - { name: rust }
   - { name: readline }
   - { name: ricty, options: [powerline,vim-powerline] }
@@ -53,7 +54,6 @@ homebrew_packages:
   - { name: vim, options: [with-lua,with-python3,override-system-vi]}
   - { name: zsh, options: without-etcdir }
   - { name: zsh-completions }
-  - { name: zplug }
 
 homebrew_cask_packages:
   - { name: java }
