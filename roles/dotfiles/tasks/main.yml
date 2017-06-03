@@ -6,7 +6,7 @@
     dest=~/dotfiles
     version=master
 
-- name: install powerline
+- name: Install powerline
   shell: pip3 install powerline-status
 
 - name: mkdir vim dir
@@ -15,18 +15,21 @@
 - name: mkdir nvim dir
   file: path=~/.config/nvim state=directory mode=0755
 
-- name: create symlinks
+- name: Create symlinks
   shell: ~/dotfiles/install.sh
 
-- name: install emacs packages via cask
+- name: Install emacs packages via cask
   shell: cask install
   args:
     chdir: ~/.emacs.d/
 
-- name: install fisherman
+- name: Install fisherman
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 
-- name: install fish plugins via fisherman
+- name: Install fish plugins via fisherman
   shell: fish ~/.config/fish/functions/fisher.fish
   args:
     chdir: ~/.config/fish/
+
+- name: Install atom packages
+  shell: apm-beta install --packages-file ~/dotfiles/atom/packages.txt
