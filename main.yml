@@ -5,6 +5,4 @@
   roles:
     - homebrew
     - dotfiles
-    - { role: font, when: CI != "true" }
-
-
+    - font
