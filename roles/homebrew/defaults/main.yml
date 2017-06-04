@@ -61,4 +61,3 @@ homebrew_cask_packages:
   - { name: caffeine }
   - { name: shiftit }
   - { name: atom-beta }
-  - { name: atom }

@@ -32,4 +32,4 @@
     chdir: ~/.config/fish/
 
 - name: Install atom packages
-  shell: apm-beta install --packages-file ~/dotfiles/atom/packages.txt
+  shell: mkdir -p ~/.atom && apm-beta install --packages-file ~/dotfiles/atom/packages.txt
