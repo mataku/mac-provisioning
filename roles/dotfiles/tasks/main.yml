@@ -12,8 +12,8 @@
 - name: mkdir vim dir
   file: path=~/.vim state=directory mode=0755
 
-- name: mkdir nvim dir
-  file: path=~/.config/nvim state=directory mode=0755
+- name: mkdir atom dir
+  file: path=~/.atom state=directory mode=0755
 
 - name: Create symlinks
   shell: ~/dotfiles/install.sh
@@ -32,4 +32,4 @@
     chdir: ~/.config/fish/
 
 - name: Install atom packages
-  shell: mkdir -p ~/.atom && apm-beta install --packages-file ~/dotfiles/atom/packages.txt
+  shell: apm-beta install --packages-file ~/dotfiles/atom/packages.txt
