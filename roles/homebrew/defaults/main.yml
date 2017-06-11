@@ -3,8 +3,6 @@
 homebrew_repositories:
   - caskroom/versions
   - homebrew/dupes
-  - homebrew/python
-  - homebrew/science
   - homebrew/versions
   - sanemat/font
 
