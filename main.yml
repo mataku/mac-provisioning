@@ -6,3 +6,5 @@
     - homebrew
     - dotfiles
     - font
+  environment:
+    { HOMEBREW_NO_AUTO_UPDATE: 1, when: CI == "true" }
