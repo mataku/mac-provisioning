@@ -2,7 +2,7 @@
 
 homebrew_repositories:
   - caskroom/versions
-  - homebrew/dupes
+  - caskroom/fonts
   - homebrew/versions
   - sanemat/font
 
@@ -59,3 +59,4 @@ homebrew_cask_packages:
   - { name: caffeine }
   - { name: shiftit }
   - { name: atom-beta }
+  - { name: font-open-sans }
