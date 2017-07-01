@@ -33,3 +33,6 @@
 
 - name: Install atom packages
   shell: apm-beta install --packages-file ~/dotfiles/atom/packages.txt
+
+- name: Install terminal-plus
+  shell: apm-beta install LarsKumbier/terminal-plus
