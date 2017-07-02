@@ -36,3 +36,12 @@
 
 - name: Install terminal-plus
   shell: apm-beta install LarsKumbier/terminal-plus
+
+- name: Create github.com dir
+  file: path=~/github.com state=directory
+
+- name: git clone robe dir
+  git:
+    repo=https://github.com/dgutov/robe
+    dest=~/github.com/robe
+    version=master
