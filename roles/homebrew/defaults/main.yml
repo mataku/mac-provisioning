@@ -41,7 +41,7 @@ homebrew_packages:
   - { name: reattach-to-user-namespace }
   - { name: rust }
   - { name: readline }
-  - { name: ricty, options: with-powerline }
+  - { name: ricty, options: with-powerline, when: CI != "true" }
   - { name: ruby-build }
   - { name: rbenv }
   - { name: ruby }
