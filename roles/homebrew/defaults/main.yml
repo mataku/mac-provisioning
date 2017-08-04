@@ -34,6 +34,7 @@ homebrew_packages:
   - { name: node }
   - { name: pandoc }
   - { name: peco }
+  - { name: pngquant }
   - { name: python3 }
   - { name: pypy3 }
   - { name: pyenv }
