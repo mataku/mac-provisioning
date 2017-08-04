@@ -7,6 +7,7 @@ homebrew_repositories:
   - sanemat/font
 
 homebrew_packages:
+  - { name: exa }
   - { name: gcc }
   - { name: cask }
   - { name: carthage }
