@@ -1,5 +1,8 @@
 ---
 
+- name: Install ricty
+  shell: brew install ricty --with-powerline
+
 - name: copy font files
   shell: cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
   
