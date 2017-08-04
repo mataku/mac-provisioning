@@ -3,7 +3,7 @@ before_install:
 - brew update
 - brew install ansible
 script:
-- ansible-playbook -vv main.yml -i hosts
+- ansible-playbook -vv main.yml --extra-vars "CI=true" -i hosts
 notifications:
   email: false
   slack:
