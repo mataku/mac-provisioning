@@ -31,7 +31,7 @@ homebrew_packages:
   - { name: mecab }
   - { name: mecab-ipadic }
   - { name: nkf }
-  - { name: nodebrew }
+  - { name: node }
   - { name: pandoc }
   - { name: peco }
   - { name: python3 }
