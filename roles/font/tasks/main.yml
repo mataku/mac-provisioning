@@ -1,5 +1,6 @@
 ---
 
+# https://github.com/sanemat/homebrew-font/issues/49
 - name: Install ricty
   shell: brew install ricty --with-powerline
   ignore_errors: yes
