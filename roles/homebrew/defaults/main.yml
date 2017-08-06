@@ -7,6 +7,7 @@ homebrew_repositories:
   - sanemat/font
 
 homebrew_packages:
+  - { name: exa }
   - { name: gcc }
   - { name: cask }
   - { name: carthage }
@@ -30,9 +31,10 @@ homebrew_packages:
   - { name: mecab }
   - { name: mecab-ipadic }
   - { name: nkf }
-  - { name: nodebrew }
+  - { name: node }
   - { name: pandoc }
   - { name: peco }
+  - { name: pngquant }
   - { name: python3 }
   - { name: pypy3 }
   - { name: pyenv }
@@ -40,7 +42,6 @@ homebrew_packages:
   - { name: reattach-to-user-namespace }
   - { name: rust }
   - { name: readline }
-  - { name: ricty, options: with-powerline }
   - { name: ruby-build }
   - { name: rbenv }
   - { name: ruby }

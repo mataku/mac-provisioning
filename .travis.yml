@@ -3,7 +3,10 @@ before_install:
 - brew update
 - brew install ansible
 script:
-- ansible-playbook -vv main.yml -i hosts
+- ansible-playbook -vv main.yml --extra-vars "CI=true" -i hosts
+cache:
+  directories:
+    - $HOME/Library/Caches/Homebrew
 notifications:
   email: false
   slack:
