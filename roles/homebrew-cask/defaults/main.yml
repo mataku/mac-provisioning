@@ -1,0 +1,9 @@
+---
+
+homebrew_cask_packages:
+  - { name: java }
+  - { name: xquartz }
+  - { name: caffeine }
+  - { name: shiftit }
+  - { name: atom-beta }
+  - { name: font-open-sans }

@@ -1,0 +1,8 @@
+---
+
+- name: noti (Start install cask packages)
+  shell: osascript -e 'display notification "Start installing cask packages!" with title "Finished Homebrew packages!"'
+
+- name: Install packages
+  homebrew_cask: name={{ item.name }}
+  with_items: "{{ homebrew_cask_packages }}"
