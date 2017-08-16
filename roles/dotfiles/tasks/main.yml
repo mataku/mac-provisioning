@@ -33,6 +33,7 @@
 
 - name: Install atom packages
   shell: apm-beta install --packages-file ~/dotfiles/atom/packages.txt
+  when: CI != "true"
 
 - name: Create github.com dir
   file: path=~/github.com state=directory
