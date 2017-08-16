@@ -4,6 +4,7 @@
   become: no
   roles:
     - homebrew
+    - { role: homebrew-cask, when: CI != "true" }
     - dotfiles
     - font
   environment:
