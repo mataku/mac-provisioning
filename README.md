@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/rhythnn/mac-ansible.svg?branch=master)](https://travis-ci.org/rhythnn/mac-ansible)
+[![Build Status](https://travis-ci.org/rhythnn/mac-provisioning.svg?branch=master)](https://travis-ci.org/rhythnn/mac-provisioning)
 
 ## Installation
 
-    $ git clone git://github.com/rhythnn/mac-ansible.git  
-    $ sh mac-ansible/init.sh
+    $ git clone git://github.com/rhythnn/mac-provisioning.git  
+    $ sh mac-proisioning/init.sh
