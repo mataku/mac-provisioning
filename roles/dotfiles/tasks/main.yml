@@ -2,7 +2,7 @@
 
 - name: git clone my dotfiles
   git:
-    repo=https://github.com/rhythnn/dotfiles.git
+    repo=https://github.com/mataku/dotfiles.git
     dest=~/dotfiles
     version=master
 
