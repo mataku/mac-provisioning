@@ -46,6 +46,8 @@ homebrew_packages:
   - { name: rbenv }
   - { name: ruby }
   - { name: source-highlight }
+  - { name: terminal-notifier }
+  - { name: the_platinum_searcher }
   - { name: tidy-html5 }
   - { name: tig }
   - { name: tree }
