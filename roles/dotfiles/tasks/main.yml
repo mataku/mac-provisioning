@@ -22,7 +22,7 @@
   shell: cask install
   args:
     chdir: ~/.emacs.d/
-  when: CI != "true"
+  ignored_errors: yes
 
 - name: Install fisherman
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
