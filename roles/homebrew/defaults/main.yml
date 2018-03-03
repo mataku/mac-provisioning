@@ -3,7 +3,6 @@
 homebrew_repositories:
   - caskroom/versions
   - caskroom/fonts
-  - homebrew/versions
   - sanemat/font
 
 homebrew_packages:
