@@ -18,10 +18,8 @@
 - name: Create symlinks
   shell: ~/dotfiles/install.sh
 
-- name: Install emacs packages via cask
-  shell: cask install
-  args:
-    chdir: ~/.emacs.d/
+- name: noti (setup emacs packages)
+  shell: osascript -e 'display notification "M-x eval-buffer to install packages" with title "Emacs"'
 
 - name: Install fisherman
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
