@@ -22,7 +22,6 @@
   shell: cask install
   args:
     chdir: ~/.emacs.d/
-  ignored_errors: yes
 
 - name: Install fisherman
   shell: curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
@@ -31,10 +30,6 @@
   shell: fish ~/.config/fish/functions/fisher.fish
   args:
     chdir: ~/.config/fish/
-
-- name: Install atom packages
-  shell: apm-beta install --packages-file ~/dotfiles/atom/packages.txt
-  when: CI != "true"
 
 - name: Create github.com dir
   file: path=~/github.com state=directory
