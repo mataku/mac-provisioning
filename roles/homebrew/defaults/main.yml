@@ -6,22 +6,24 @@ homebrew_repositories:
   - sanemat/font
 
 homebrew_packages:
-  - { name: exa }
-  - { name: gcc }
   - { name: cask }
   - { name: carthage }
   - { name: curl }
   - { name: emacs }
+  - { name: exa }
   - { name: fish }
   - { name: fontforge }
   - { name: freetype }
   - { name: fontconfig }
+  - { name: gcc }
   - { name: ghostscript }
   - { name: git, options: [with-brewed-curl, with-brewed-openssl]}
   - { name: go }
   - { name: gnu-sed }
+  - { name: gnupg }
   - { name: grep }
   - { name: heroku-toolbelt }
+  - { name: hub }
   - { name: hugo }
   - { name: jq }
   - { name: kotlin }
